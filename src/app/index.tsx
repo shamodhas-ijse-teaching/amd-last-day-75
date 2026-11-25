@@ -10,7 +10,10 @@ const App = () => {
     return (
       <View style={styles.container}>
         <Text>We need your permission to show the camera</Text>
-        <TouchableOpacity onPress={cameraRequestPermission}>
+        <TouchableOpacity
+          onPress={cameraRequestPermission}
+          style={styles.permitionButton}
+        >
           <Text>grant permission</Text>
         </TouchableOpacity>
       </View>
@@ -19,17 +22,20 @@ const App = () => {
 
   return (
     <View style={styles.container}>
-      <CameraView style={styles.cemera} />
+      <CameraView style={styles.cemera} facing="back" />
     </View>
   )
 }
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#000"
+    flex: 1
   },
-  cemera: { flex: 1 }
+  cemera: { flex: 1 },
+  permitionButton: {
+    padding: 10,
+    backgroundColor: "#0099ff"
+  }
 })
 
 export default App
